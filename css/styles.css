@@ -13,6 +13,7 @@
 	--secondary-background-color: #F5F4FA;
 	--footer-background-color: #2F303A;
 	--footer-link-color: rgba(255, 255, 255, 0.6);
+	--icons-color: #AFB1B8;
 }
 
 body {
@@ -108,16 +109,11 @@ img {
 	font-size: 26px;
 	line-height: 1.19;
 	letter-spacing: 0.03em;
-
 }
 
 .nav-list {
 	display: flex;
 }
-
-/* .nav-list .item {
-	margin-right: 50px;
-} */
 
 .nav-list .item + .item {
 	margin-left: 50px;
@@ -162,10 +158,20 @@ img {
 /* Hero section */
 
 .hero {
+	height: 600px;
+	max-width: 1600px;
+	margin-right: auto;
+	margin-left: auto;
+
+	background-color: var(--footer-background-color);
+	background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero-bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
 	padding-top: 200px;
 	padding-bottom: 200px;
 
-	background-color: var(--footer-background-color);
 	text-align: center;
 }
 
@@ -173,18 +179,15 @@ img {
 	width: 696px;
 	margin-right: auto;
 	margin-left: auto;
+	margin-bottom: 30px;
 
 	color: var(--white-site-color);
-
 
 	font-weight: 900;
 	font-size: 44px;
 	line-height: 1.36;
 	letter-spacing: 0.06em;
 	text-transform: uppercase;
-	/* text-align: center; */
-	margin-bottom: 30px;
-
 }
 
 .hero-btn {
@@ -232,9 +235,34 @@ img {
 	margin-right: 30px;
 }
 
-/* .features-list .item + .item {
-	margin-left: 30px;
-} */
+.features-list .item::before {
+	content: '';
+	display: block;
+	height: 120px;
+	border-radius: 4px;
+	margin-bottom: 30px;
+
+	background-repeat: no-repeat;
+	background-size: 70px;
+	background-position: center;
+	background-color:var(--secondary-background-color);
+}
+
+.icon-antenna::before {
+	background-image: url("../images/icons/antenna-1.svg");
+}
+
+.icon-clock::before {
+	background-image: url("../images/icons/clock.svg");
+}
+
+.icon-diagram::before {
+	background-image: url("../images/icons/diagram.svg");
+}
+
+.icon-austronaut::before {
+	background-image: url("../images/icons/astronaut.svg");
+}
 
 .features-list-title {
 	font-size: 14px;
@@ -313,9 +341,83 @@ img {
 	font-size: 16px;
 	line-height: 1.18;
 	text-align: center;
+	margin-bottom: 16px;
 }
 
+.employee-social-list {
+	display: flex;
+	justify-content: center;
+}
+
+.employee-social-item+.employee-social-item {
+	margin-left: 10px;
+}
+
+.employee-social-link {
+	width: 44px;
+	height: 44px;
+
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.employee-social-icon {
+	fill: var(--icons-color);
+}
+
+.employee-social-link:hover {
+	background-color: var(--accent-color);
+}
+
+.employee-social-link:hover .employee-social-icon {
+	fill: var(--white-site-color);
+}
+
+/* Clients */
+
+.clients-list {
+	display: flex;
+	justify-content: center;
+}
+
+.client-item+.client-item {
+	margin-left: 30px;
+}
+
+.client-link {
+	width: 170px;
+	height: 92px;
+
+	border: 1px solid var(--icons-color);
+	border-radius: 4px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.client-icon {
+	fill: var(--icons-color);
+}
+
+.client-link:hover {
+	border-color: var(--accent-color);
+}
+
+.client-link:hover .client-icon {
+	fill: var(--accent-color);
+
+}
+
+
 /* Footer */
+
+.footer-container {
+	display: flex;
+	align-items: baseline;
+}
 
 .footer {
 	background-color: var(--footer-background-color);
@@ -344,6 +446,7 @@ img {
 	color: var(--white-site-color);
 	font-style: normal;
 	line-height: 1.71;
+	margin-rigth: 70px;
 }
 
 .address-link:hover,
@@ -362,6 +465,54 @@ img {
 	color: var(--accent-color);
 }
 
+.footer-social {
+	margin-left: 70px;
+}
+
+.footer-social-text {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+	text-transform: uppercase;
+
+	color: #FFFFFF;
+
+	margin-bottom: 20px;
+}
+
+.footer-social-list {
+	display: flex;
+	justify-content: center;
+}
+
+.footer-social-item+.footer-social-item {
+	margin-left: 10px;
+}
+
+.footer-social-link {
+	width: 44px;
+	height: 44px;
+
+	background-color: rgba(255, 255, 255, 0.1);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-social-icon {
+	fill: var(--white-site-color);
+
+}
+
+.footer-social-link:hover {
+	background-color: var(--accent-color);
+}
+
+.footer-social-link:hover .footer-social-icon {
+	fill: var(--white-site-color);
+}
 
 /* Portfolio */
 
@@ -401,8 +552,6 @@ img {
 	cursor: pointer;
 	border: 0;
 }
-
-
 
 .filter-btn:hover,
 .filter-btn:focus {
